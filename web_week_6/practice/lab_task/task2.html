@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Number Guessing Game</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f4f4f4;
+    }
+
+    .game-container {
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        text-align: center;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: #4caf50;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        margin-top: 10px;
+    }
+
+    button:hover {
+        background-color: #45a049;
+    }
+</style>
+</head>
+<body>
+
+<div class="game-container">
+    <h2>Number Guessing Game</h2>
+    <p>Guess a number between 1 and 100:</p>
+    <input type="number" id="userGuess" min="1" max="100">
+    <button onclick="checkGuess()">Guess</button>
+    <p id="message"></p>
+</div>
+
+<script>
+    const randomNumber = Math.floor(Math.random() * 100) + 1;
+    const message = document.getElementById('message');
+
+    function checkGuess() {
+        const userGuess = parseInt(document.getElementById('userGuess').value);
+
+        if (isNaN(userGuess) || userGuess < 1 || userGuess > 100) {
+            message.textContent = 'Please enter a valid number between 1 and 100.';
+            return;
+        }
+
+        if (userGuess === randomNumber) {
+            message.textContent = 'Congratulations! You guessed the correct number!';
+        } else if (userGuess < randomNumber) {
+            message.textContent = 'Too low! Try a higher number.';
+        } else {
+            message.textContent = 'Too high! Try a lower number.';
+        }
+    }
+</script>
+
+</body>
+</html>
