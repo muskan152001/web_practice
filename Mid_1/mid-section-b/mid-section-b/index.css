@@ -1,0 +1,39 @@
+.image-container {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    margin: 0;
+  }
+  
+  .image-container img {
+    display:block;
+    width: 100%;
+    height: 100%;
+  }
+  
+
+  
+  .prev,.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+    padding: 10px 15px;
+    border: 2px;
+    cursor: pointer;
+    font-size: 18px;
+  }
+  
+  .prev {
+    left: 1;
+  }
+  
+  .next {
+    right: 1;
+  }
+  
+  .prev:hover,
+  .next:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
