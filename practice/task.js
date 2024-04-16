@@ -17,7 +17,8 @@ const obj = {
     myname: "muskan",
     Gender: "female",
     code: "+92",
-    age: "22"
+    age: "22",
+    
 
 }
 
@@ -156,6 +157,16 @@ function getData() {
  // Handle any errors that occurred during the fetch operation
  console.error('Error fetching user data:', error);
  });
+
+
+
+
+
+
+
+
+
+
 
 
 
